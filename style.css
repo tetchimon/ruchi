@@ -1,0 +1,116 @@
+* {
+    margin: 0px;
+    padding: 0px;
+   box-sizing: border-box;
+}
+
+html {
+    background: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/0911f71d-f0eb-4724-ac24-19d7d57dc2d1/d8gwo77-be07a2c3-291c-482e-9d96-7e1320fc79d8.png/v1/fill/w_1192,h_670,q_70,strp/low_poly_terrain_by_jukepoksi_d8gwo77-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9OTAwIiwicGF0aCI6IlwvZlwvMDkxMWY3MWQtZjBlYi00NzI0LWFjMjQtMTlkN2Q1N2RjMmQxXC9kOGd3bzc3LWJlMDdhMmMzLTI5MWMtNDgyZS05ZDk2LTdlMTMyMGZjNzlkOC5wbmciLCJ3aWR0aCI6Ijw9MTYwMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.lBHEMAGze82UHO2vK9CGcxXc7MGbN2qjy4sf1tZJb54) no-repeat center center fixed;
+    background-size: cover;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    font-family: 'Amatic SC', cursive;
+    background-color: #75b5ca
+}
+
+.logo {
+    color: rgb(222, 236, 245);
+    letter-spacing: 5px;
+    font-size: 25px;
+}
+
+.nav-links{
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links a {
+    color: rgb(222, 236, 245);
+    letter-spacing: 5px;
+    font-size: 22px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 2px;
+    background-color: rgb(222, 236, 245);
+    margin: 5px;
+    transition: all 0.3s;
+}
+
+@media screen and (max-width: 1024px){
+    .nav-links{
+        display: flex;
+        justify-content: space-around;
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 768px){
+    body {
+        overflow-x: hidden;
+    }
+    .nav-links {
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top:  8vh;
+        background-color: #75b5ca;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+
+    .nav-links li{
+        opacity: 0;
+    }
+
+    .burger {
+        display: block;
+    }
+}
+
+.nav-active {
+    transform: translateX(0%);
+}
+
+@keyframes navLinkFade{
+    from{
+        opacity: 0;
+        transform: translateX(50);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+.toggle .line2{
+    opacity: 0;
+}
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px, -6px);
+}
